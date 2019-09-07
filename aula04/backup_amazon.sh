@@ -5,10 +5,10 @@ cd $CAMINHO_AMAZON
 
 if [ ! -d $data ]
 then
-	mkdir data
+	mkdir $data
 fi
 
-tabelas=$(mysql uroot -p $MYSQL_PASS mutillidae -e "show tables;" | grep -v Tables)
+tabelas=$(mysql -uroot -p$MYSQL_PASS mutillidae -e "show tables;" | grep -v Tables)
 
 for tabela in $tabelas
 do
