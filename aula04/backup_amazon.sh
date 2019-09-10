@@ -12,7 +12,7 @@ tabelas=$(mysql -uroot -p$MYSQL_PASS mutillidae -e "show tables;" | grep -v Tabl
 
 for tabela in $tabelas
 do
-	mysqldump -uroot -p$MYSQL_PASS mutillidae $tabela > $CAMINHO_AMAZON/$data/$tabela.sql
+	mysqldump -uroot -pAlego2019 mutillidae $tabela > $CAMINHO_AMAZON/$data/$tabela.sql
 done
 
 aws s3 sync $CAMINHO_AMAZON s3://curso-alurarodrigo-s3
